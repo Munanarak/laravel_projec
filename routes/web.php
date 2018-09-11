@@ -14,3 +14,25 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/home', function() {
+ 	return '<h1>This is home page</h1>' ;
+});
+
+Route::get('/blog/{page_id}', function($page_id) {
+     return "<h1>This is blog page : $page_id </h1>" ;
+});
+
+Route::get('/blog/{page_id}/edit', function($page_id) {
+ 	return "<h1>This is blog page : $page_id for edit</h1>" ;
+});
+
+Route::get('/product/{a}/{b}/{c}', function($a, $b, $c) {
+ 	return "<h1>This is product page </h1><div>$a , $b, $c</div>" ;
+});
+
+Route::get('/category/{a?}', function($a = "mobile") {
+ 	return "<h1>This is category page : $a </h1>" ;
+});
+
+Route::get('/profile', 'ProfileController@index');
+
