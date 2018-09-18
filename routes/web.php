@@ -33,33 +33,8 @@ Route::get('/product/{a}/{b}/{c}', function($a, $b, $c) {
 Route::get('/category/{a?}', function($a = "mobile") {
  	return "<h1>This is category page : $a </h1>" ;
 });
-
-<<<<<<< HEAD
-Route::get('/profile', 'ProfileController@index');
-=======
-Route::get('/hello', function () {	
-return view('hello');
-});
-
-Route::get('/greeting', function () {
-	$data = [
-'name'      => 'James' ,
-'last_name' => 'Mars'
-];
-return view('greeting', $data);
-});
-
-Route::get('/combine/{id}', function ($id) {
-	$data = [
-'id' => $id
-];
-return view('combine', $data);
-});
-
-Route::get('/quiz3', function () {	
-return view('quiz3');
-});
-
-
->>>>>>> 7b7c6ef5bb4a047383d5ac0c3fa0a09155615431
+Route::get('/employee', 'EmployeeController@index');
+Route::get('/employee/{id}', 'EmployeeController@show');
+Route::get('/position', 'PositionController@index');
+Route::get('/position/{id}', 'PositionController@show');
 
