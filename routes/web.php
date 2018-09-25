@@ -34,7 +34,21 @@ Route::get('/category/{a?}', function($a = "mobile") {
  	return "<h1>This is category page : $a </h1>" ;
 });
 Route::get('/employee', 'EmployeeController@index');
+Route::get('/employee/create', 'EmployeeController@create');
+Route::post('/employee', 'EmployeeController@store');
 Route::get('/employee/{id}', 'EmployeeController@show');
+Route::get('/employee/{id}/edit', 'EmployeeController@edit');
+Route::put('/employee/{id}', 'EmployeeController@update');
+Route::delete('/employee/{id}', 'EmployeeController@destroy');
+
 Route::get('/position', 'PositionController@index');
+Route::get('/position/create', 'PositionController@create');
+Route::post('/position', 'PositionController@store');
 Route::get('/position/{id}', 'PositionController@show');
+Route::get('/position/{id}/edit', 'PositionController@edit');
+Route::put('/position/{id}', 'PositionController@update');
+Route::delete('/position/{id}', 'PositionController@destroy');
+
+
+
 

@@ -6,7 +6,7 @@
 	</div>
 	
 		<strong>position_id : </strong>
-		<span>{{ $row->position_name }}</span>
+		<span>{{ $row->position_id }}</span>
 	</div>
 	<div><a href="{{ url('/') }}/position">back to position</a></div>
 @empty

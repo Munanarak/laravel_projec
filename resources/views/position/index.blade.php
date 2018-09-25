@@ -19,9 +19,39 @@
 		<td>
 			<a href="{{ url('/') }}/position/{{ $row->position_id }}">View</a>
 			<a href="{{ url('/') }}/position/{{ $row->position_id }}/edit">Edit</a>
-			<a href="{{ url('/') }}/position/{{ $row->position_id }}/Delete">Delete</a>
+			<a href="javascript:void(0)" onclick="onDelete( {{ $row->position_id }} )">
+Delete
+</a>
+
+			
 
 		</td>
 	</tr>
 	@endforeach
 </table>
+<div style="display:none;">
+	<form action="#" method="POST" id="form_delete" >
+		{{ csrf_field() }}
+		{{ method_field('DELETE') }}
+		<button type="submit">Delete</button>
+	</form>
+	<script>
+	function onDelete(id){
+		//--THIS FUNCTION IS USED FOR SUBMIT FORM BY script--//
+
+		//GET FORM BY ID
+		var form = document.getElementById("form_delete");
+
+		//CHANGE ACTION TO SPECIFY ID
+		form.action = "{{ url('/') }}/position/"+id;
+
+		//SUBMIT
+		var want_to_delete = confirm('Are you sure to delete this position?');
+		if(want_to_delete){
+			form.submit();
+		}
+	}
+	</script>
+</div>
+
+

@@ -29,7 +29,7 @@ return view('position/index',$data);
      */
     public function create()
     {
-        //
+        return view('position/create');
     }
 
     /**
@@ -40,7 +40,11 @@ return view('position/index',$data);
      */
     public function store(Request $request)
     {
-        //
+       
+        $position_name = $request->input('position_name');
+PositionModel::insert( $position_name);
+return redirect('/position');
+
     }
 
     /**
@@ -69,7 +73,12 @@ return view('position/show',$data);
      */
     public function edit($id)
     {
-        //
+        $table_position = PositionModel::select_by_id($id);
+$data = [
+'table_position' => $table_position
+];
+return view('position/edit',$data);
+
     }
 
     /**
@@ -81,7 +90,12 @@ return view('position/show',$data);
      */
     public function update(Request $request, $id)
     {
-        //
+        
+$position_name = $request->input('position_name');
+    
+PositionModel::update_by_id( $position_name,$id);
+return redirect('/position');
+
     }
 
     /**
@@ -92,6 +106,8 @@ return view('position/show',$data);
      */
     public function destroy($id)
     {
-        //
+        PositionModel::delete_by_id($id);
+return redirect('/position');
+
     }
 }
