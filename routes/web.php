@@ -49,6 +49,15 @@ Route::get('/position/{id}/edit', 'PositionController@edit');
 Route::put('/position/{id}', 'PositionController@update');
 Route::delete('/position/{id}', 'PositionController@destroy');
 
+Route::get('/student', 'StudentController@index');
+Route::get('/student/create', 'StudentController@create');
+Route::post('/student', 'StudentController@store');
+Route::get('/student/{id}', 'StudentController@show');
+Route::get('/student/{id}/edit', 'StudentController@edit');
+Route::put('/student/{id}', 'StudentController@update');
+Route::delete('/student/{id}', 'StudentController@destroy');
+
+
 
 
 
