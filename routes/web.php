@@ -57,6 +57,15 @@ Route::get('/student/{id}/edit', 'StudentController@edit');
 Route::put('/student/{id}', 'StudentController@update');
 Route::delete('/student/{id}', 'StudentController@destroy');
 
+Route::get('/product', 'ProductController@index');
+Route::get('/product/create', 'ProductController@create');
+Route::post('/product', 'ProductController@store');
+Route::get('/product/{id}', 'ProductController@show');
+Route::get('/product/{id}/edit', 'ProductController@edit');
+Route::put('/product/{id}', 'ProductController@update');
+Route::delete('/product/{id}', 'ProductController@destroy');
+
+
 
 
 
